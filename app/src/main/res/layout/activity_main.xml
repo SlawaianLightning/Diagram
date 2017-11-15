@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.viacheslaw.diagram.MainActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bMagneetafsluiter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="magneetafsluiter" />
+
+            <Button
+                android:id="@+id/bTrimpomp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trimpomp" />
+
+            <Button
+                android:id="@+id/bManometer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Manometer" />
+
+            <Button
+                android:id="@+id/bAntiHevelklep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="anti hevelklep" />
+
+            <Button
+                android:id="@+id/bLeding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="leding" />
+
+            <Button
+                android:id="@+id/bVerticalLeding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="vertical leding" />
+
+            <Button
+                android:id="@+id/bBulktank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="bulktank" />
+
+            <Button
+                android:id="@+id/bDoorvoer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="doorvoer" />
+            <Button
+                android:id="@+id/bFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="filter" />
+
+            <Button
+                android:id="@+id/bCustomShade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="custom shade" />
+
+            <Button
+                android:id="@+id/bClear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="clear" />
+
+            <Button
+                android:id="@+id/bRotation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="rotation" />
+
+            <Button
+                android:id="@+id/bSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="save" />
+
+            <Button
+                android:id="@+id/bLoad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="load" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.mindfusion.diagramming.DiagramView
+        android:id="@+id/diag_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:backgroundTint="@android:color/background_dark"
+        android:translationX="200dp"
+        android:visibility="visible"></com.mindfusion.diagramming.DiagramView>
+
+</FrameLayout>
