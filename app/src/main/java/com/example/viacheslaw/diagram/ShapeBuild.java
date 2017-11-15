@@ -8,35 +8,32 @@ import com.mindfusion.diagramming.Shape;
 import com.mindfusion.drawing.Color;
 
 public class ShapeBuild {
-    public static final String antiHevelklep="AntiHevelklep";
-    public static final String bulktank="bulktank";
-    public static final String myCustomShape="myCustomShape";
-    public static final String leding="leding";
-    public static final String verticalleding="verticalleding";
-    public static final String magneetafsluiter="Magneetafsluiter";
-    public static final String triangle="triangle";
-    public static final String background="background";
-    public static final String trimpomp="trimpomp";
-    public static final String manometer="manometer";
-    public static final String doorvoer="doorvoer";
-    public static final String filter="filter";
+    public static final String ANTIHEVELKLEP="ANTIHEVELKLEP";
+    public static final String BULKTANK="BULKTANK";
+    public static final String CUSTOM_SHAPE="CUSTOM_SHAPE";
+    public static final String LEDING="LEDING";
+    public static final String VERTICALLEDING="VERTICALLEDING";
+    public static final String MAGNEETAFSLUITER="MAGNEETAFSLUITER";
+    public static final String TRIMPOMP="TRIMPOMP";
+    public static final String MANOMETER="MANOMETER";
+    public static final String DOORVOER="DOORVOER";
+    public static final String FILTER="FILTER";
+    public static final String HANDAFSLUITER="HANDAFSLUITER";
+    public static final String DRIEWEGKRAAN="DRIEWEGKRAAN";
+    public static final String DAGTANK="DAGTANK";
+    public static final String FLEXIBEL="FLEXIBEL";
 
     public static Shape getCustomShape(){
-        ElementTemplate[] lines=new LineTemplate[4];
-        lines[0]=new LineTemplate(50,30,80,50);
-        lines[1]=new LineTemplate(80,50,50,70);
-        lines[2]=new LineTemplate(50,70,20,50);
-        lines[3]=new LineTemplate(20,50,50,30);
-        return new Shape(lines,Path.FillType.EVEN_ODD,myCustomShape );
-    }
-
-    public static Shape getTriangle(){
-        ElementTemplate[] lines=new LineTemplate[30];
-        for(int i=0;i<10;i++){
-        lines[i]=new LineTemplate(10,10,50,50);
-        lines[i+10]=new LineTemplate(50,50,10,100);
-        lines[i+20]=new LineTemplate(10,100,10,10);}
-        return new Shape(lines, Path.FillType.EVEN_ODD,triangle );
+        ElementTemplate[] lines=new LineTemplate[6];
+        lines[0]=new LineTemplate(55,40,45,70);
+        lines[1]=new LineTemplate(45,70,50,70);
+        lines[1].setColor(Color.decode("#14ffffff"));
+        lines[2]=new LineTemplate(50,70,60,40);
+        lines[3]=new LineTemplate(60,40,50,70);
+        lines[4]=new LineTemplate(50,70,45,70);
+        lines[4].setColor(Color.decode("#14ffffff"));
+        lines[5]=new LineTemplate(45,70,55,40);
+        return new Shape(lines,Path.FillType.EVEN_ODD,CUSTOM_SHAPE);
     }
 
     public static Shape getMagneetafsluiter(){
@@ -62,7 +59,7 @@ public class ShapeBuild {
         for(int i=0;i<17;i++){
             lines[i].setColor(Color.BLACK);
         }
-        return new Shape(lines,Path.FillType.EVEN_ODD,magneetafsluiter );
+        return new Shape(lines,Path.FillType.EVEN_ODD,MAGNEETAFSLUITER );
     }
 
     public static Shape getTrimpomp(){
@@ -98,9 +95,7 @@ public class ShapeBuild {
             }
             lines[j].setColor(Color.BLACK);
         }
-
-        return new Shape(lines,Path.FillType.EVEN_ODD,trimpomp );
-
+        return new Shape(lines,Path.FillType.EVEN_ODD,TRIMPOMP);
     }
 
     public static Shape getManometer(){
@@ -132,50 +127,29 @@ public class ShapeBuild {
             }
             lines[j].setColor(Color.BLACK);
         }
-        return new Shape(lines,Path.FillType.EVEN_ODD,manometer );
+        return new Shape(lines,Path.FillType.EVEN_ODD,MANOMETER);
     }
 
-    public static Shape getBackgroung(){
-        float radius=0.050f;
-        ElementTemplate[] lines=new LineTemplate[360];
-        float[] x=new float[360];
-        float[] y=new float[360];
-        for(int i=0;i<360;i++){
-            float rad = (float) ((float)i / 180 * 3.14);
-            x[i]=(float)Math.cos(rad)*radius+radius/2;
-            y[i]=(float)Math.sin(rad)*radius+radius/2;
-        }
-        for(int i=0,j=0;i<360;i++,j++){
-            if(i!=359){
-                lines[j]=new LineTemplate(x[i],y[i],x[i+1],y[i+1]);
-            }else{
-                lines[j]=new LineTemplate(x[i],y[i],x[0],y[0]);
-            }
-            lines[j].setColor(Color.BLACK);
-        }
-        return new Shape(lines,Path.FillType.INVERSE_EVEN_ODD,background );
-    }
-
-    public static Shape getbAntiHevelklep(){
+    public static Shape getAntiHevelklep(){
         ElementTemplate[] lines=new LineTemplate[5];
         lines[0]=new LineTemplate(50,30,50,50);
         lines[1]=new LineTemplate(50,50,20,30);
         lines[2]=new LineTemplate(20,30,20,70);
         lines[3]=new LineTemplate(30,70,50,50);
         lines[4]=new LineTemplate(50,50,50,70);
-        return new Shape(lines,Path.FillType.EVEN_ODD,antiHevelklep );
+        return new Shape(lines,Path.FillType.EVEN_ODD,ANTIHEVELKLEP );
     }
 
     public static Shape getLeding(){
         ElementTemplate[] lines=new LineTemplate[1];
         lines[0]=new LineTemplate(20,50,70,50);
-        return new Shape(lines,Path.FillType.EVEN_ODD,leding);
+        return new Shape(lines,Path.FillType.EVEN_ODD,LEDING);
     }
 
     public static Shape getVirticalLeding(){
         ElementTemplate[] lines=new LineTemplate[1];
         lines[0]=new LineTemplate(50,20,50,70);
-        return new Shape(lines,Path.FillType.EVEN_ODD,verticalleding);
+        return new Shape(lines,Path.FillType.EVEN_ODD,VERTICALLEDING);
     }
 
     public static Shape getBulktank(){
@@ -222,16 +196,20 @@ public class ShapeBuild {
             }
             lines[j].setColor(Color.BLACK);
         }
-        return new Shape(lines,Path.FillType.EVEN_ODD,bulktank );
+        return new Shape(lines,Path.FillType.EVEN_ODD,BULKTANK);
     }
 
     public static Shape getDoorvoer(){
-        ElementTemplate[] lines=new LineTemplate[3];
+        ElementTemplate[] lines=new LineTemplate[6];
         lines[0]=new LineTemplate(55,40,45,70);
         lines[1]=new LineTemplate(45,70,50,70);
         lines[1].setColor(Color.decode("#14ffffff"));
         lines[2]=new LineTemplate(50,70,60,40);
-        return new Shape(lines,Path.FillType.EVEN_ODD,doorvoer );
+        lines[3]=new LineTemplate(60,40,50,70);
+        lines[4]=new LineTemplate(50,70,45,70);
+        lines[4].setColor(Color.decode("#14ffffff"));
+        lines[5]=new LineTemplate(45,70,55,40);
+        return new Shape(lines,Path.FillType.EVEN_ODD,DOORVOER);
     }
 
     public static Shape getFilter(){
@@ -240,7 +218,117 @@ public class ShapeBuild {
         lines[1]=new LineTemplate(80,50,50,70);
         lines[2]=new LineTemplate(50,70,20,50);
         lines[3]=new LineTemplate(20,50,50,30);
-        return new Shape(lines,Path.FillType.EVEN_ODD,filter );
+        return new Shape(lines,Path.FillType.EVEN_ODD,FILTER);
     }
 
+    public static Shape getHandafsluiter(){
+        ElementTemplate[] lines=new LineTemplate[10];
+        lines[0]=new LineTemplate(50,60,70,50);
+        lines[1]=new LineTemplate(70,50,70,70);
+        lines[2]=new LineTemplate(70,70,50,60);
+        lines[3]=new LineTemplate(50,60,30,50);
+        lines[4]=new LineTemplate(30,50,30,70);
+        lines[5]=new LineTemplate(30,70,50,60);
+        lines[6]=new LineTemplate(50,60,50,30);
+        lines[7]=new LineTemplate(50,30,70,30);
+        lines[8]=new LineTemplate(70,30,30,30);
+        lines[9]=new LineTemplate(70,30,50,30);
+        return new Shape(lines,Path.FillType.EVEN_ODD,HANDAFSLUITER);
+    }
+
+    public static Shape getDriewegkraan(){
+        ElementTemplate[] lines=new LineTemplate[13];
+        lines[0]=new LineTemplate(50,60,70,50);
+        lines[1]=new LineTemplate(70,50,70,70);
+        lines[2]=new LineTemplate(70,70,50,60);
+        lines[3]=new LineTemplate(50,60,30,50);
+        lines[4]=new LineTemplate(30,50,30,70);
+        lines[5]=new LineTemplate(30,70,50,60);
+        lines[6]=new LineTemplate(50,60,60,80);
+        lines[7]=new LineTemplate(60,80,40,80);
+        lines[8]=new LineTemplate(40,80,50,60);
+        lines[9]=new LineTemplate(50,60,50,30);
+        lines[10]=new LineTemplate(50,30,70,30);
+        lines[11]=new LineTemplate(70,30,30,30);
+        lines[12]=new LineTemplate(70,30,50,30);
+        return new Shape(lines,Path.FillType.EVEN_ODD,DRIEWEGKRAAN);
+    }
+
+    public static Shape getDagtank(){
+        float  radius=10;
+        ElementTemplate[] lines=new LineTemplate[364];
+        lines[0]=new LineTemplate(80,35,80,65);
+        float[] x=new float[360];
+        float[] y=new float[360];
+        for(int i=0;i<90;i++){
+            float rad = (float) ((float)i / 180 * 3.14);
+            x[i]=(float)Math.cos(rad)*radius+70;
+            y[i]=(float)Math.sin(rad)*radius+65;
+            if(i==0){
+                lines[i+1]=new LineTemplate(60,50,x[i],y[i]);
+                continue;
+            }
+            lines[i+1]=new LineTemplate(x[i-1],y[i-1],x[i],y[i]);
+        }
+        lines[91]=new LineTemplate(x[89],y[89],x[89]-40,y[89]);
+        for(int i=90;i<180;i++){
+            float rad = (float) ((float)i / 180 * 3.14);
+            x[i]=(float)Math.cos(rad)*radius+30;
+            y[i]=(float)Math.sin(rad)*radius+65;
+            if(i==90){
+                lines[i+2]=new LineTemplate(x[89]-60,y[89],x[i],y[i]);
+                continue;
+            }
+            lines[i+2]=new LineTemplate(x[i-1],y[i-1],x[i],y[i]);
+        }
+        lines[182]=new LineTemplate(x[179],y[179],x[179],y[179]-30);
+        for(int i=180;i<270;i++){
+            float rad = (float) ((float)i / 180 * 3.14);
+            x[i]=(float)Math.cos(rad)*radius+30;
+            y[i]=(float)Math.sin(rad)*radius+35;
+            if(i==180){
+                lines[i+3]=new LineTemplate(x[179],y[179]-30,x[i],y[i]);
+                continue;
+            }
+            lines[i+3]=new LineTemplate(x[i-1],y[i-1],x[i],y[i]);
+        }
+        lines[273]=new LineTemplate(x[269],y[269],x[269]+40,y[269]);
+        for(int i=270;i<360;i++){
+            float rad = (float) ((float)i / 180 * 3.14);
+            x[i]=(float)Math.cos(rad)*radius+70;
+            y[i]=(float)Math.sin(rad)*radius+35;
+            if(i==270){
+                lines[i+4]=new LineTemplate(x[269]+40,y[269],x[i],y[i]);
+                continue;
+            }
+            lines[i+4]=new LineTemplate(x[i-1],y[i-1],x[i],y[i]);
+        }
+        return new Shape(lines,Path.FillType.EVEN_ODD,DAGTANK);
+    }
+
+    public static Shape getFlexibel(){
+        float  radius=25;
+        ElementTemplate[] lines=new LineTemplate[1440];
+        float[] x=new float[720];
+        float[] y=new float[720];
+        for(int i=0;i<720;i++){
+            float rad = (float) ((float)i / 180 * 3.14);
+            x[i]=(float)i*0.1f+15;
+            y[i]=(float)Math.sin(rad)*radius+48;
+        }
+        for(int i=0,j=0;i<720;i++,j++){
+            if(i!=719){
+                lines[j]=new LineTemplate(x[i],y[i],x[i+1],y[i+1]);
+            }else{
+                lines[j]=new LineTemplate(x[i],y[i],x[i-1],y[i-1]);
+            }
+        }for(int i=720,j=719;i<1440;i++,j--){
+            if(i!=1439){
+                lines[i]=new LineTemplate(x[j],y[j],x[j-1],y[j-1]);
+            }else{
+                lines[i]=new LineTemplate(x[j],y[j],x[0],y[0]);
+            }
+        }
+        return new Shape(lines,Path.FillType.EVEN_ODD,FLEXIBEL);
+    }
 }
