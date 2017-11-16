@@ -9,7 +9,7 @@
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/scroll"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -64,26 +64,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="doorvoer" />
+
             <Button
                 android:id="@+id/bFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="filter" />
+
             <Button
                 android:id="@+id/bHandafsluiter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="handafsluiter" />
+
             <Button
                 android:id="@+id/bDriewegkraan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="driewegkraan" />
+
             <Button
                 android:id="@+id/bDagtank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="dagtank" />
+
             <Button
                 android:id="@+id/bFlexibel"
                 android:layout_width="match_parent"
@@ -91,10 +96,22 @@
                 android:text="flexibel" />
 
             <Button
+                android:id="@+id/bNisa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nisa" />
+
+            <Button
                 android:id="@+id/bCustomShade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="custom shade" />
+
+            <Button
+                android:id="@+id/bDeleteActivItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="delete shape" />
 
             <Button
                 android:id="@+id/bClear"
@@ -107,6 +124,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="rotation" />
+            <Button
+                android:id="@+id/bRotationBy90"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="rotation 90 angle" />
 
             <Button
                 android:id="@+id/bSave"
@@ -130,6 +152,37 @@
         android:background="@android:color/background_dark"
         android:backgroundTint="@android:color/background_dark"
         android:translationX="200dp"
-        android:visibility="visible"></com.mindfusion.diagramming.DiagramView>
+        android:translationY="-100dp"
+        android:visibility="visible">
 
+    </com.mindfusion.diagramming.DiagramView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="200dp"
+            android:layout_marginBottom="25dp"
+            android:layout_alignParentBottom="true">
+
+            <EditText
+                android:id="@+id/etText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/bAddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="add text" />
+        </LinearLayout>
+    </RelativeLayout>
 </FrameLayout>

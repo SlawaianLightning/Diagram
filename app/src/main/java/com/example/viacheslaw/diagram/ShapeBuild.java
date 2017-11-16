@@ -22,17 +22,14 @@ public class ShapeBuild {
     public static final String DRIEWEGKRAAN="DRIEWEGKRAAN";
     public static final String DAGTANK="DAGTANK";
     public static final String FLEXIBEL="FLEXIBEL";
+    public static final String SHAPETEXT="SHAPETEXT";
 
     public static Shape getCustomShape(){
-        ElementTemplate[] lines=new LineTemplate[6];
-        lines[0]=new LineTemplate(55,40,45,70);
-        lines[1]=new LineTemplate(45,70,50,70);
-        lines[1].setColor(Color.decode("#14ffffff"));
-        lines[2]=new LineTemplate(50,70,60,40);
-        lines[3]=new LineTemplate(60,40,50,70);
-        lines[4]=new LineTemplate(50,70,45,70);
-        lines[4].setColor(Color.decode("#14ffffff"));
-        lines[5]=new LineTemplate(45,70,55,40);
+        ElementTemplate[] lines=new LineTemplate[4];
+        lines[0]=new LineTemplate(30,30,70,30);
+        lines[1]=new LineTemplate(70,30,70,70);
+        lines[2]=new LineTemplate(70,70,30,70);
+        lines[3]=new LineTemplate(30,70,30,30);
         return new Shape(lines,Path.FillType.EVEN_ODD,CUSTOM_SHAPE);
     }
 
@@ -330,5 +327,18 @@ public class ShapeBuild {
             }
         }
         return new Shape(lines,Path.FillType.EVEN_ODD,FLEXIBEL);
+    }
+
+    public static Shape getShapeText(){
+        ElementTemplate[] lines=new LineTemplate[4];
+        lines[0]=new LineTemplate(10,10,90,10);
+        lines[0].setColor(Color.decode("#14ffffff"));
+        lines[1]=new LineTemplate(90,10,90,90);
+        lines[1].setColor(Color.decode("#14ffffff"));
+        lines[2]=new LineTemplate(90,90,10,90);
+        lines[2].setColor(Color.decode("#14ffffff"));
+        lines[3]=new LineTemplate(10,90,10,10);
+        lines[3].setColor(Color.decode("#14ffffff"));
+        return new Shape(lines,Path.FillType.EVEN_ODD,SHAPETEXT);
     }
 }
